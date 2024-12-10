@@ -1,0 +1,262 @@
+<html>
+
+<head>
+    <title>Design for Life</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            position: relative;
+            height: 1200px;
+            overflow: hidden;
+            padding-bottom: 40px;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            padding-bottom: 20px;
+        }
+
+        .banner .divtext {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-10%, -50%);
+            font-size: 32px;
+            font-family: 'Helvetica', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .topnav {
+            position: absolute;
+            top: 5%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+
+        }
+
+        .topnav input {
+            max-width: 300px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .topnav ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topnav ul li {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+
+        .topnav ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Montessarat', sans-serif;
+
+        }
+
+        .row {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        .article {
+            padding-bottom: 50px;
+            align-items: flex-start;
+            border-bottom: 1px solid #aaa;
+            gap: 20px;
+            display: none;
+        }
+
+        .row .article.visible {
+            display: flex;
+        }
+
+        .article .image {
+            flex-shrink: 0;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .article .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article .content {
+            flex: 1;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .article h2 {
+            font-size: 32px;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .article p {
+            margin: 0;
+            color: #666;
+        }
+
+        #viewall {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #viewall:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topnav">
+            <input type="text" placeholder="SEARCH...">
+            <ul>
+                <li><a href="home">HOME</a></li>
+                <li><a href="blog">BLOG</a></li>
+                <li><a href="podcast">PODCAST</a></li>
+                <li><a href="about">ABOUT</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <div class="banner">
+        <img src="D:\GAYATHRI\blog\img1.avif">
+        <div class="divtext">
+            <p>
+                <strong>DESIGN</strong> FOR <strong>LIFE</strong>
+            </p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="article visible">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img2.webp">
+            </div>
+            <div class="content">
+                <h2>PLAYING WITH PATTERNS</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <div class="article visible">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img3.webp">
+            </div>
+            <div class="content">
+                <h2>NATALIA’S APARTMENT MAKEOVER</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <div class="article hidden">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img4.webp">
+            </div>
+            <div class="content">
+                <h2>OFF THE WALL DESIGN DECOR</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <div class="article hidden">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img5.webp">
+            </div>
+            <div class="content">
+                <h2>OPEN HOUSE STAGING</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <div class="article hidden">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img6.webp">
+            </div>
+            <div class="content">
+                <h2>WHEN LESS REALLY IS MORE</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <div class="article hidden">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img7.webp">
+            </div>
+            <div class="content">
+                <h2>GREEN WINDOWS & GREEN THUMBS</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <div class="article hidden">
+            <div class="image">
+                <img src="D:\GAYATHRI\blog\img8.webp">
+            </div>
+            <div class="content">
+                <h2>NEUTRAL COLOR PALETTE INSPIRATION</h2>
+                <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices
+                    your
+                    audience to continue reading....</p>
+            </div>
+        </div>
+        <button id="viewall">View All Posts</button>
+    </div>
+    <script>
+        document.getElementById('viewall').addEventListener('click', function () {
+            const hiddenart = document.querySelectorAll('.article.hidden');
+            hiddenart.forEach(article => {
+                article.classList.remove('hidden');
+                article.classList.add('visible');
+            });
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
