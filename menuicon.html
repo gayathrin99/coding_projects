@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Menu Icon</title>
+    <style>
+        .menu1 div {
+            width: 200px;
+            height: 4px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            margin-left: 30px;
+            margin-top: 30px;
+            background-color: black;
+        }
+
+        .menu2 {
+            float: right;
+        }
+
+        .menu2 div {
+            width: 200px;
+            height: 4px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            margin-left: 30px;
+            margin-top: 30px;
+            background-color: black;
+            transition: 0.2s;
+        }
+
+        .change .div1 {
+            transform: translate(0, 50px) rotate(45deg);
+        }
+
+        .change .div2 {
+            opacity: 0;
+        }
+
+        .change .div3 {
+            transform: translate(0, -50px) rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="menu1">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <section class="menu2" onclick="myFunction(this)">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+    </section>
+    <script>
+        function myFunction(event) {
+            event.classList.toggle("change");
+        }
+    </script>
+</body>
+
+</html>
