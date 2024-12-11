@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Tabs</title>
+    <style>
+        .tabs {
+            display: flex;
+            font-size: 16px;
+            background-color: grey;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+
+        .tabsection {
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabcontent {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center">Tabs</h1>
+    <div class="tabs">
+        <div class="tabsection" onclick="tabselect(event,'London')">London</div>
+        <div class="tabsection" onclick="tabselect(event,'Paris')">Paris</div>
+        <div class="tabsection" onclick="tabselect(event,'Tokyo')">Tokyo</div>
+    </div>
+    <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    <script>
+        function tabselect(event, x) {
+            var tabs = document.getElementsByClassName('tabcontent');
+            var i;
+            for (i = 0; i < tabs.length; i++) {
+                if (tabs[i].id === x) {
+                    tabs[i].style.display = 'block';
+                }
+                else {
+                    tabs[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
