@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>Header Tabs</title>
+    <style>
+        .headers {
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .tabcontent {
+            display: none;
+            height: 300px;
+            padding-top: 100px;
+            color: white;
+        }
+
+        div[id="London"] {
+            background-color: red;
+        }
+
+        div[id="Paris"] {
+            background-color: #04d7ad;
+        }
+
+        div[id="Tokyo"] {
+            background-color: #048ad3;
+        }
+
+        div[id="Oslo"] {
+            background-color: #d77504;
+        }
+
+        .tabs {
+            display: flex;
+            font-size: 24px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .tabsection {
+            width: 25%;
+            background-color: #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headers">
+        <div id="London" class="tabcontent">
+            <h1>London</h1>
+            <p>London is the capital city of England.</p>
+        </div>
+        <div id="Paris" class="tabcontent">
+            <h1>Paris</h1>
+            <p>Paris is the capital of France.</p>
+        </div>
+        <div id="Tokyo" class="tabcontent">
+            <h1>Tokyo</h1>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+        <div id="Oslo" class="tabcontent">
+            <h1>Oslo</h1>
+            <p>Oslo is the capital of Norway.</p>
+        </div>
+
+    </div>
+    <div class="tabs">
+        <div class="tabsection" onclick="tabselect(event,'London')">London</div>
+        <div class="tabsection" onclick="tabselect(event,'Paris')">Paris</div>
+        <div class="tabsection" onclick="tabselect(event,'Tokyo')">Tokyo</div>
+        <div class="tabsection" onclick="tabselect(event,'Oslo')">Oslo</div>
+
+    </div>
+    <script>
+        function tabselect(event, x) {
+            var tabs = document.getElementsByClassName('tabcontent');
+            var i;
+            for (i = 0; i < tabs.length; i++) {
+                if (tabs[i].id === x) {
+                    tabs[i].style.display = 'block';
+                }
+                else {
+                    tabs[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
