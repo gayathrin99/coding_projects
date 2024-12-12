@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Vertical Tabs</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tabs {
+            display: block;
+            font-size: 16px;
+            background-color: grey;
+            width: 20%;
+            justify-content: space-evenly;
+        }
+
+        .tabsection {
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+        }
+
+
+        .tabcontent {
+            display: none;
+            float: right;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center">Vertical Tabs</h1>
+    <div class="container">
+        <div class="tabs">
+            <div class="tabsection" onclick="tabselect(event,'London')">London</div>
+            <div class="tabsection" onclick="tabselect(event,'Paris')">Paris</div>
+            <div class="tabsection" onclick="tabselect(event,'Tokyo')">Tokyo</div>
+        </div>
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+        <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    </div>
+    <script>
+        function tabselect(event, x) {
+            var tabs = document.getElementsByClassName('tabcontent');
+            var i;
+            for (i = 0; i < tabs.length; i++) {
+                if (tabs[i].id === x) {
+                    tabs[i].style.display = 'block';
+                }
+                else {
+                    tabs[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
