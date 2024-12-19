@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <title>Quiz App</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            text-align: right;
+            font-size: 16px;
+        }
+
+        form p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        form p input[type="radio"] {
+            padding-left: 100px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quiz App</h1>
+    <div>
+        Time Remaining: <span id="timer">01:00</span>
+    </div>
+
+    <form>
+        <p>In which film does Aamir Khan play an alien who lands on Earth and befriends a journalist?
+        </p>
+        <input type="radio" id="dhoom" name="alienmov" value="dhoom">
+        <label>Dhoom</label><br>
+        <input type="radio" id="lagaan" name="alienmov" value="lagaan">
+        <label>Lagaan</label><br>
+        <input type="radio" id="pk" name="alienmov" value="pk">
+        <label>P.K.</label><br>
+        <input type="radio" id="ss" name="alienmov" value="ss">
+        <label>Secret Superstar</label><br>
+        <p>Which film features Rancho, Farhan, and Raju as university friends navigating through life’s ups and downs?
+        </p>
+        <input type="radio" id="tzp" name="fremov" value="tzp">
+        <label>Tare Zameen Par</label><br>
+        <input type="radio" id="3id" name="fremov" value="3id">
+        <label>3 idiots</label><br>
+        <input type="radio" id="gol" name="fremov" value="gol">
+        <label>Golmaal</label><br>
+        <input type="radio" id="lag" name="fremov" value="lag">
+        <label>Lagaan</label><br>
+        <p>Which film revolves around a wrestler’s journey, starring Salman Khan?
+
+        </p>
+        <input type="radio" id="sul" name="bhaimov" value="sul">
+        <label>Sultaan</label><br>
+        <input type="radio" id="bb" name="bhaimov" value="bb">
+        <label>Bhajragi Bhaijaan</label><br>
+        <input type="radio" id="chak" name="bhaimov" value="chak">
+        <label>Chak de India</label><br>
+        <input type="radio" id="tger" name="bhaimov" value="tger">
+        <label>Tiger Znda Hai</label><br>
+        <p>In which film does Hrithik Roshan play a superhero?</p>
+        <input type="radio" id="war" name="supermov" value="war">
+        <label>War</label><br>
+        <input type="radio" id="dan" name="supermov" value="dan">
+        <label>Dangal</label><br>
+        <input type="radio" id="znmd" name="supermov" value="znmd">
+        <label>Zindagi Na Milega Doobara</label><br>
+        <input type="radio" id="krr" name="supermov" value="krr">
+        <label>Krissh</label><br>
+        <p>Which film is about a father training his daughters to become wrestling champions?
+        </p>
+        <input type="radio" id="cki" name="2dmov" value="cki">
+        <label>Chak De India</label><br>
+        <input type="radio" id="dangal" name="2dmov" value="dangal">
+        <label>Dangal</label><br>
+        <input type="radio" id="mk" name="2dmov" value="mk">
+        <label>Mary Kom</label><br>
+        <input type="radio" id="ak" name="2dmov" value="ak">
+        <label>Lagaan</label><br>
+        <input type="submit">
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                let score = 0;
+                const correctanswers = {
+                    alienmov: "pk",
+                    fremov: "3id",
+                    bhaimov: "sul",
+                    supermov: "krr",
+                    "2dmov": "dangal"
+                };
+                for (const question in correctanswers) {
+                    const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                    if (selectedOption && selectedOption.value === correctanswers[question]) {
+                        score++; // Increase score for correct answer
+                    }
+                }
+                console.log(score);
+                alert("Your Score is: " + score);
+            });
+        });
+
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let timer = 60; // Set the countdown time in seconds
+            const timerElement = document.getElementById("timer");
+
+            const countdown = setInterval(function () {
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+
+                // Display the time in MM:SS format
+                timerElement.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+                // Decrease the timer
+                timer--;
+
+                // Stop the countdown at 0
+                if (timer < 0) {
+                    clearInterval(countdown);
+                    timerElement.textContent = "Time's up!";
+                    alert("Time's up!");
+                }
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>
